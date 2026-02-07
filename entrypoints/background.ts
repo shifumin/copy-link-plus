@@ -1,4 +1,4 @@
-import { CopyFormat, formatLink } from "@/utils/formatters";
+import { type CopyFormat, formatLink } from "@/utils/formatters";
 
 export default defineBackground(() => {
   browser.commands.onCommand.addListener(async (command) => {

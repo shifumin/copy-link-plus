@@ -1,7 +1,8 @@
 import "./style.css";
-import { CopyFormat, formatLink } from "@/utils/formatters";
+import { type CopyFormat, formatLink } from "@/utils/formatters";
 import { fetchShortcuts } from "@/utils/shortcuts";
 
+// biome-ignore lint/style/noNonNullAssertion: #app is guaranteed to exist in index.html
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
 app.innerHTML = `
@@ -29,6 +30,7 @@ app.innerHTML = `
 `;
 
 const buttons = document.querySelectorAll<HTMLButtonElement>(".copy-btn");
+// biome-ignore lint/style/noNonNullAssertion: #status is guaranteed to exist in the template above
 const status = document.querySelector<HTMLDivElement>("#status")!;
 
 buttons.forEach((button) => {
@@ -38,13 +40,11 @@ buttons.forEach((button) => {
   });
 });
 
-document
-  .querySelector("#customize-shortcuts")
-  ?.addEventListener("click", (e) => {
-    e.preventDefault();
-    browser.tabs.create({ url: "chrome://extensions/shortcuts" });
-    window.close();
-  });
+document.querySelector("#customize-shortcuts")?.addEventListener("click", (e) => {
+  e.preventDefault();
+  browser.tabs.create({ url: "chrome://extensions/shortcuts" });
+  window.close();
+});
 
 const initShortcuts = async (): Promise<void> => {
   const shortcuts = await fetchShortcuts();

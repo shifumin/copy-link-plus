@@ -6,10 +6,7 @@ const commandToFormat: Record<string, CopyFormat> = {
   "copy-two-lines": "twoLines",
 };
 
-export const formatShortcutForDisplay = (
-  shortcut: string,
-  isMac: boolean
-): string => {
+export const formatShortcutForDisplay = (shortcut: string, isMac: boolean): string => {
   if (!shortcut) return "";
   if (!isMac) return shortcut;
 

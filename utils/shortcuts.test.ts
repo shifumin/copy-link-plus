@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { formatShortcutForDisplay } from "./shortcuts";
 
 describe("formatShortcutForDisplay", () => {
@@ -30,15 +30,11 @@ describe("formatShortcutForDisplay", () => {
     const isMac = false;
 
     it("should return shortcut as-is", () => {
-      expect(formatShortcutForDisplay("Ctrl+Shift+C", isMac)).toBe(
-        "Ctrl+Shift+C"
-      );
+      expect(formatShortcutForDisplay("Ctrl+Shift+C", isMac)).toBe("Ctrl+Shift+C");
     });
 
     it("should return Alt+Shift+Key as-is", () => {
-      expect(formatShortcutForDisplay("Alt+Shift+X", isMac)).toBe(
-        "Alt+Shift+X"
-      );
+      expect(formatShortcutForDisplay("Alt+Shift+X", isMac)).toBe("Alt+Shift+X");
     });
   });
 
