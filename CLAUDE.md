@@ -17,7 +17,9 @@ entrypoints/
     └── style.css          # Popup styles (dark mode support)
 utils/
 ├── formatters.ts          # Link format core logic (pure functions)
-└── formatters.test.ts     # Unit tests for formatters
+├── formatters.test.ts     # Unit tests for formatters
+├── shortcuts.ts           # Keyboard shortcut fetching and display formatting
+└── shortcuts.test.ts      # Unit tests for shortcuts
 public/icon/               # Extension icons (16–128px)
 ```
 

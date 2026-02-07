@@ -22,11 +22,11 @@ Click the extension icon to open the popup and select a format.
 
 | Command | Windows/Linux | macOS |
 |---------|---------------|-------|
-| Raw URL | `Ctrl+Shift+C` | `Cmd+Shift+C` |
-| Markdown | `Ctrl+Shift+X` | `Cmd+Shift+X` |
-| Two Lines | `Ctrl+Shift+Z` | `Cmd+Shift+Z` |
+| Raw URL | `Alt+Shift+C` | `Cmd+Shift+C` |
+| Markdown | `Alt+Shift+X` | `Cmd+Shift+X` |
+| Two Lines | `Alt+Shift+Z` | `Cmd+Shift+Z` |
 
-Customize shortcuts at `chrome://extensions/shortcuts`.
+These are default shortcuts. You can customize them at `chrome://extensions/shortcuts`.
 
 ## Tech Stack
 
