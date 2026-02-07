@@ -4,7 +4,7 @@
 
 Copy Link Plus — A Chrome extension that copies the current page URL in 3 formats (Raw URL / Markdown / Two Lines).
 
-**Tech Stack**: TypeScript, [WXT](https://wxt.dev/) (Manifest V3), Vitest
+**Tech Stack**: TypeScript, [WXT](https://wxt.dev/) (Manifest V3), Vitest, [Biome](https://biomejs.dev/) (linter/formatter)
 
 ## Architecture
 
@@ -32,6 +32,8 @@ public/icon/               # Extension icons (16–128px)
 mise exec -- pnpm dev        # Start dev server (hot reload)
 mise exec -- pnpm build      # Production build
 mise exec -- pnpm compile    # Type check (tsc --noEmit)
+mise exec -- pnpm lint       # Lint and format check (Biome)
+mise exec -- pnpm lint:fix   # Lint and format with auto-fix
 mise exec -- pnpm test       # Run tests (Vitest)
 mise exec -- pnpm zip        # Create ZIP for Chrome Web Store
 ```
