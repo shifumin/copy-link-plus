@@ -104,6 +104,23 @@ h1 {
   color: var(--color-text-muted);
 }
 
+.btn-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.format-preview {
+  font-family:
+    ui-monospace, "SF Mono", "Cascadia Code", "Segoe UI Mono", Menlo, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
 .status {
   text-align: center;
   font-size: 13px;

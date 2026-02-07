@@ -10,15 +10,24 @@ app.innerHTML = `
     <h1>Copy Link Plus</h1>
     <div class="buttons">
       <button id="copy-raw" class="copy-btn" data-format="raw">
-        <span class="label">Raw URL</span>
+        <span class="btn-content">
+          <span class="label">Raw URL</span>
+          <span class="format-preview">URL</span>
+        </span>
         <span class="shortcut" data-shortcut-format="raw" aria-hidden="true"></span>
       </button>
       <button id="copy-markdown" class="copy-btn" data-format="markdown">
-        <span class="label">Markdown</span>
+        <span class="btn-content">
+          <span class="label">Markdown</span>
+          <span class="format-preview">[Title](URL)</span>
+        </span>
         <span class="shortcut" data-shortcut-format="markdown" aria-hidden="true"></span>
       </button>
       <button id="copy-two-lines" class="copy-btn" data-format="twoLines">
-        <span class="label">Two Lines</span>
+        <span class="btn-content">
+          <span class="label">Two Lines</span>
+          <span class="format-preview">Title\\nURL</span>
+        </span>
         <span class="shortcut" data-shortcut-format="twoLines" aria-hidden="true"></span>
       </button>
     </div>
