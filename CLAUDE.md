@@ -13,8 +13,8 @@ entrypoints/
 ├── background.ts          # Keyboard shortcut handling (Service Worker)
 └── popup/
     ├── index.html         # Popup HTML template
-    ├── main.ts            # Popup UI and event handling
-    └── style.css          # Popup styles (dark mode support)
+    ├── main.ts            # Popup UI and event handling (format preview subtexts in buttons)
+    └── style.css          # Popup styles (dark mode support, format preview monospace styling)
 utils/
 ├── formatters.ts          # Link format core logic (pure functions)
 ├── formatters.test.ts     # Unit tests for formatters
