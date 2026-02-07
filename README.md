@@ -23,8 +23,8 @@ Click the extension icon to open the popup and select a format.
 | Command | Windows/Linux | macOS |
 |---------|---------------|-------|
 | Raw URL | `Ctrl+Shift+C` | `Cmd+Shift+C` |
-| Markdown | `Ctrl+Shift+M` | `Cmd+Shift+M` |
-| Two Lines | `Ctrl+Shift+T` | `Cmd+Shift+T` |
+| Markdown | `Ctrl+Shift+X` | `Cmd+Shift+X` |
+| Two Lines | `Ctrl+Shift+Z` | `Cmd+Shift+Z` |
 
 Customize shortcuts at `chrome://extensions/shortcuts`.
 
