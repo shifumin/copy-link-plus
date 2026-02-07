@@ -11,18 +11,18 @@ app.innerHTML = `
     <div class="buttons">
       <button id="copy-raw" class="copy-btn" data-format="raw">
         <span class="label">Raw URL</span>
-        <span class="shortcut" data-shortcut-format="raw"></span>
+        <span class="shortcut" data-shortcut-format="raw" aria-hidden="true"></span>
       </button>
       <button id="copy-markdown" class="copy-btn" data-format="markdown">
         <span class="label">Markdown</span>
-        <span class="shortcut" data-shortcut-format="markdown"></span>
+        <span class="shortcut" data-shortcut-format="markdown" aria-hidden="true"></span>
       </button>
       <button id="copy-two-lines" class="copy-btn" data-format="twoLines">
         <span class="label">Two Lines</span>
-        <span class="shortcut" data-shortcut-format="twoLines"></span>
+        <span class="shortcut" data-shortcut-format="twoLines" aria-hidden="true"></span>
       </button>
     </div>
-    <div id="status" class="status"></div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
     <div class="footer">
       <a id="customize-shortcuts" class="customize-link" href="#">Customize shortcuts</a>
     </div>
@@ -78,12 +78,20 @@ async function copyLink(format: CopyFormat): Promise<void> {
   }
 }
 
+let statusTimeout: ReturnType<typeof setTimeout> | undefined;
+
 function showStatus(message: string, isError = false): void {
+  if (statusTimeout) {
+    clearTimeout(statusTimeout);
+  }
+
   status.textContent = message;
   status.className = `status ${isError ? "error" : "success"}`;
 
-  setTimeout(() => {
-    status.textContent = "";
+  statusTimeout = setTimeout(() => {
     status.className = "status";
-  }, 1500);
+    setTimeout(() => {
+      status.textContent = "";
+    }, 200);
+  }, 1300);
 }
