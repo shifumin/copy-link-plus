@@ -1,5 +1,6 @@
 import "./style.css";
 import { CopyFormat, formatLink } from "@/utils/formatters";
+import { fetchShortcuts } from "@/utils/shortcuts";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
@@ -9,18 +10,21 @@ app.innerHTML = `
     <div class="buttons">
       <button id="copy-raw" class="copy-btn" data-format="raw">
         <span class="label">Raw URL</span>
-        <span class="shortcut">⌘⇧C</span>
+        <span class="shortcut" data-shortcut-format="raw"></span>
       </button>
       <button id="copy-markdown" class="copy-btn" data-format="markdown">
         <span class="label">Markdown</span>
-        <span class="shortcut">⌘⇧X</span>
+        <span class="shortcut" data-shortcut-format="markdown"></span>
       </button>
       <button id="copy-two-lines" class="copy-btn" data-format="twoLines">
         <span class="label">Two Lines</span>
-        <span class="shortcut">⌘⇧Z</span>
+        <span class="shortcut" data-shortcut-format="twoLines"></span>
       </button>
     </div>
     <div id="status" class="status"></div>
+    <div class="footer">
+      <a id="customize-shortcuts" class="customize-link" href="#">Customize shortcuts</a>
+    </div>
   </div>
 `;
 
@@ -34,8 +38,31 @@ buttons.forEach((button) => {
   });
 });
 
+document
+  .querySelector("#customize-shortcuts")
+  ?.addEventListener("click", (e) => {
+    e.preventDefault();
+    browser.tabs.create({ url: "chrome://extensions/shortcuts" });
+    window.close();
+  });
+
+const initShortcuts = async (): Promise<void> => {
+  const shortcuts = await fetchShortcuts();
+  for (const [format, text] of Object.entries(shortcuts)) {
+    const el = document.querySelector(`[data-shortcut-format="${format}"]`);
+    if (el) {
+      el.textContent = text;
+    }
+  }
+};
+
+initShortcuts();
+
 async function copyLink(format: CopyFormat): Promise<void> {
-  const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+  const [tab] = await browser.tabs.query({
+    active: true,
+    currentWindow: true,
+  });
   if (!tab?.url || !tab?.title) {
     showStatus("Failed to get page info", true);
     return;

@@ -104,3 +104,30 @@ h1 {
 .status.error {
   color: #ef4444;
 }
+
+.footer {
+  text-align: center;
+  margin-top: 4px;
+}
+
+.customize-link {
+  font-size: 11px;
+  color: #888;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.customize-link:hover {
+  text-decoration: underline;
+  color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .customize-link {
+    color: #777;
+  }
+
+  .customize-link:hover {
+    color: #999;
+  }
+}
