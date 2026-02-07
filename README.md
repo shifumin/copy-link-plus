@@ -28,22 +28,6 @@ Click the extension icon to open the popup and select a format.
 
 Customize shortcuts at `chrome://extensions/shortcuts`.
 
-## Development
-
-```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Run tests
-pnpm test
-```
-
 ## Tech Stack
 
 - TypeScript
