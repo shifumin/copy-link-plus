@@ -2,6 +2,25 @@
 
 A Chrome extension to copy the current page URL in various formats.
 
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shifumin/copy-link-plus.git
+   cd copy-link-plus
+   ```
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Build the extension:
+   ```bash
+   pnpm build
+   ```
+4. Open `chrome://extensions/` in Chrome
+5. Enable **Developer mode** (toggle in the top right)
+6. Click **Load unpacked** and select the `.output/chrome-mv3` directory
+
 ## Features
 
 Copy the current page link in three formats:
@@ -31,5 +50,5 @@ These are default shortcuts. You can customize them at `chrome://extensions/shor
 ## Tech Stack
 
 - TypeScript
-- [WXT](https://wxt.dev/) - Next-gen Web Extension Framework
+- [WXT](https://wxt.dev/)
 - Manifest V3
