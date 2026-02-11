@@ -1,5 +1,11 @@
 export type CopyFormat = "raw" | "markdown" | "twoLines";
 
+export const formatDisplayLabel: Record<CopyFormat, string> = {
+  raw: "Raw URL",
+  markdown: "Markdown",
+  twoLines: "Two Lines",
+};
+
 export function formatLink(url: string, title: string, format: CopyFormat): string {
   switch (format) {
     case "raw":

@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { formatLink } from "./formatters";
+import { formatDisplayLabel, formatLink } from "./formatters";
+
+describe("formatDisplayLabel", () => {
+  it("should have a label for each CopyFormat", () => {
+    expect(formatDisplayLabel.raw).toBe("Raw URL");
+    expect(formatDisplayLabel.markdown).toBe("Markdown");
+    expect(formatDisplayLabel.twoLines).toBe("Two Lines");
+  });
+});
 
 describe("formatLink", () => {
   const url = "https://example.com/page";

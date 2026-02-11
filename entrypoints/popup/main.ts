@@ -1,5 +1,5 @@
 import "./style.css";
-import { type CopyFormat, formatLink } from "@/utils/formatters";
+import { type CopyFormat, formatDisplayLabel, formatLink } from "@/utils/formatters";
 import { fetchShortcuts } from "@/utils/shortcuts";
 
 // biome-ignore lint/style/noNonNullAssertion: #app is guaranteed to exist in index.html
@@ -81,7 +81,7 @@ async function copyLink(format: CopyFormat): Promise<void> {
 
   try {
     await navigator.clipboard.writeText(text);
-    showStatus("Copied!");
+    showStatus(`Copied as ${formatDisplayLabel[format]}`);
   } catch {
     showStatus("Failed to copy", true);
   }
