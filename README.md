@@ -35,7 +35,7 @@ Copy the current page link in three formats:
 
 ### Popup
 
-Click the extension icon to open the popup and select a format.
+Click the extension icon to open the popup and select a format. A status message shows which format was copied.
 
 ### Keyboard Shortcuts
 
@@ -46,6 +46,8 @@ Click the extension icon to open the popup and select a format.
 | Two Lines | `Alt+Shift+Z` | `Cmd+Shift+Z` |
 
 These are default shortcuts. You can customize them at `chrome://extensions/shortcuts`.
+
+A toast notification appears on the page confirming the copied format.
 
 ## Tech Stack
 

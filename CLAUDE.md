@@ -10,13 +10,13 @@ Copy Link Plus — A Chrome extension that copies the current page URL in 3 form
 
 ```
 entrypoints/
-├── background.ts          # Keyboard shortcut handling (Service Worker)
+├── background.ts          # Keyboard shortcut handling (Service Worker), page toast injection
 └── popup/
     ├── index.html         # Popup HTML template
-    ├── main.ts            # Popup UI and event handling (format preview subtexts in buttons)
+    ├── main.ts            # Popup UI and event handling (format-aware copy status)
     └── style.css          # Popup styles (dark mode support, format preview monospace styling)
 utils/
-├── formatters.ts          # Link format core logic (pure functions)
+├── formatters.ts          # Link format core logic (pure functions, format display labels)
 ├── formatters.test.ts     # Unit tests for formatters
 ├── shortcuts.ts           # Keyboard shortcut fetching and display formatting
 └── shortcuts.test.ts      # Unit tests for shortcuts
