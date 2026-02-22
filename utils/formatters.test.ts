@@ -6,6 +6,7 @@ describe("formatDisplayLabel", () => {
     expect(formatDisplayLabel.raw).toBe("Raw URL");
     expect(formatDisplayLabel.markdown).toBe("Markdown");
     expect(formatDisplayLabel.twoLines).toBe("Two Lines");
+    expect(formatDisplayLabel.title).toBe("Title");
   });
 });
 
@@ -45,10 +46,22 @@ describe("formatLink", () => {
     });
   });
 
+  describe("title format", () => {
+    it("should return only the title", () => {
+      expect(formatLink(url, title, "title")).toBe("Example Page");
+    });
+
+    it("should return title with special characters as-is", () => {
+      const titleWithSpecial = "Page [with] (special) characters";
+      expect(formatLink(url, titleWithSpecial, "title")).toBe("Page [with] (special) characters");
+    });
+  });
+
   describe("edge cases", () => {
     it("should handle empty title", () => {
       expect(formatLink(url, "", "markdown")).toBe("[](https://example.com/page)");
       expect(formatLink(url, "", "twoLines")).toBe("\nhttps://example.com/page");
+      expect(formatLink(url, "", "title")).toBe("");
     });
 
     it("should handle URL with special characters", () => {

@@ -4,6 +4,7 @@ const commandToFormat: Record<string, CopyFormat> = {
   "copy-raw-url": "raw",
   "copy-markdown": "markdown",
   "copy-two-lines": "twoLines",
+  "copy-title": "title",
 };
 
 export const formatShortcutForDisplay = (shortcut: string, isMac: boolean): string => {
@@ -26,6 +27,7 @@ export const fetchShortcuts = async (): Promise<Record<CopyFormat, string>> => {
     raw: "",
     markdown: "",
     twoLines: "",
+    title: "",
   };
 
   for (const cmd of commands) {

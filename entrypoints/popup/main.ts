@@ -30,6 +30,13 @@ app.innerHTML = `
         </span>
         <span class="shortcut" data-shortcut-format="twoLines" aria-hidden="true"></span>
       </button>
+      <button id="copy-title" class="copy-btn" data-format="title">
+        <span class="btn-content">
+          <span class="label">Title</span>
+          <span class="format-preview">Title</span>
+        </span>
+        <span class="shortcut" data-shortcut-format="title" aria-hidden="true"></span>
+      </button>
     </div>
     <div id="status" class="status" role="status" aria-live="polite"></div>
     <div class="footer">

@@ -22,11 +22,14 @@ export default defineConfig({
         description: "Copy as Markdown link",
       },
       "copy-two-lines": {
+        description: "Copy as title and URL (two lines)",
+      },
+      "copy-title": {
         suggested_key: {
           default: "Alt+Shift+Z",
           mac: "Command+Shift+Z",
         },
-        description: "Copy as title and URL (two lines)",
+        description: "Copy page title",
       },
     },
   },

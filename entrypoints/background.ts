@@ -13,6 +13,9 @@ export default defineBackground(() => {
       case "copy-two-lines":
         format = "twoLines";
         break;
+      case "copy-title":
+        format = "title";
+        break;
       default:
         return;
     }
