@@ -19,7 +19,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.14",
+    "@biomejs/biome": "^2.4.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18",
     "wxt": "^0.20.17"
