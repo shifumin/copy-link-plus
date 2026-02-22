@@ -2,7 +2,7 @@
   "name": "copy-link-plus",
   "description": "Copy current page URL in various formats",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
