@@ -23,13 +23,14 @@ A Chrome extension to copy the current page URL in various formats.
 
 ## Features
 
-Copy the current page link in three formats:
+Copy the current page link in four formats:
 
 | Format | Output Example |
 |--------|----------------|
 | Raw URL | `https://example.com/page` |
 | Markdown | `[Page Title](https://example.com/page)` |
 | Two Lines | `Page Title`<br>`https://example.com/page` |
+| Title | `Page Title` |
 
 ## Usage
 
@@ -43,7 +44,8 @@ Click the extension icon to open the popup and select a format. A status message
 |---------|---------------|-------|
 | Raw URL | `Alt+Shift+C` | `Cmd+Shift+C` |
 | Markdown | `Alt+Shift+X` | `Cmd+Shift+X` |
-| Two Lines | `Alt+Shift+Z` | `Cmd+Shift+Z` |
+| Two Lines | *(none)* | *(none)* |
+| Title | `Alt+Shift+Z` | `Cmd+Shift+Z` |
 
 These are default shortcuts. You can customize them at `chrome://extensions/shortcuts`.
 

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Copy Link Plus — A Chrome extension that copies the current page URL in 3 formats (Raw URL / Markdown / Two Lines).
+Copy Link Plus — A Chrome extension that copies the current page URL in 4 formats (Raw URL / Markdown / Two Lines / Title).
 
 **Tech Stack**: TypeScript, [WXT](https://wxt.dev/) (Manifest V3), Vitest, [Biome](https://biomejs.dev/) (linter/formatter)
 
