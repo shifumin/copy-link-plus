@@ -11,11 +11,8 @@ export function formatLink(url: string, title: string, format: CopyFormat): stri
   switch (format) {
     case "raw":
       return url;
-    case "markdown": {
-      // Escape brackets in title for Markdown
-      const escapedTitle = title.replace(/[[\]]/g, "\\$&");
-      return `[${escapedTitle}](${url})`;
-    }
+    case "markdown":
+      return `[${title}](${url})`;
     case "twoLines":
       return `${title}\n${url}`;
     case "title":

@@ -25,17 +25,17 @@ describe("formatLink", () => {
       expect(formatLink(url, title, "markdown")).toBe("[Example Page](https://example.com/page)");
     });
 
-    it("should escape brackets in title", () => {
+    it("should not escape brackets in title", () => {
       const titleWithBrackets = "Page [with] brackets";
       expect(formatLink(url, titleWithBrackets, "markdown")).toBe(
-        "[Page \\[with\\] brackets](https://example.com/page)",
+        "[Page [with] brackets](https://example.com/page)",
       );
     });
 
-    it("should handle multiple brackets", () => {
+    it("should keep multiple brackets as-is", () => {
       const titleWithBrackets = "[Start] and [End]";
       expect(formatLink(url, titleWithBrackets, "markdown")).toBe(
-        "[\\[Start\\] and \\[End\\]](https://example.com/page)",
+        "[[Start] and [End]](https://example.com/page)",
       );
     });
   });
